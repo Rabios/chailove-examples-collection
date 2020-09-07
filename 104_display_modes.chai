@@ -26,7 +26,7 @@ def load() {
 def draw() {
   love.graphics.print("Supported modes: ", 50, 50)
   for (m : modes) {
-    var desc = to_string(m) + ": " + to_string(modes[m].width), to_string(modes[m].height)
+    var desc = "mode " + to_string(m) + ": " + to_string(modes[m].width) + "x" + to_string(modes[m].height)
     love.graphics.print(desc, 50, 50 + i * 20)
   }
 }
