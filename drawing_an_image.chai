@@ -1,0 +1,9 @@
+global whale
+
+def load() {
+  whale = love.graphics.newImage("assets/whale.png")
+}
+
+def draw() {
+  love.graphics.draw(whale, 300, 200)
+}
