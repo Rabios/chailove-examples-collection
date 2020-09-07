@@ -1,0 +1,34 @@
+// Example: Line Iterators
+// Updated 0.8.0 by Bartoleo
+
+global lines
+global fontheight
+
+def load() {
+
+  // Set the font.
+  love.graphics.setFont(love.graphics.newFont(11))
+
+  // Store the lines in this table.
+  lines = List()
+	
+  // get height of the current font and reduce by 3
+  fontheight = love.graphics.getFont().getHeight() - 3
+	
+  // Open the file 001_loading_image.chai and loop through the first 50 lines.
+  for (l : love.filesystem.lines("001_loading_image.chai")) {
+    lines.push_back(lines, love.filesystem.lines("001_loading_image.chai")[l])
+	if (lines >= 50) {
+	  break
+	}
+  }
+}
+
+def draw() {
+  // Draw the loaded lines.
+  for (l : lines) {
+    // love.graphics.print(to_string(l) + ": " + lines[l], 50, 50+(l*10))
+	// use new colored printing in 0.10.0 instead
+	love.graphics.print({{175,3*l,200}, to_string(l) + ": " + lines[l] , {255,3*l,175}, lines[l]}, 50, 50+(l*fontheight))
+  }
+}

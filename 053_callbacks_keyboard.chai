@@ -1,0 +1,33 @@
+// Example: Keyboard callbacks
+
+global lastkey
+
+def load() {
+  love.graphics.setFont(love.graphics.newFont(11))
+}
+
+// Keypressed: Called whenever a key was pressed.
+def keypressed(key) {
+  // I don't want to register spaces.
+  if (key != "space") {
+	lastkey = to_string(key) + " pressed"
+  }
+}
+
+// Keyreleased: Called whenever a key was released.
+def keyreleased(key) {
+  // I don't want to register spaces.
+  if (key != "space") {
+	lastkey = to_string(key) + " released"
+  }
+}
+
+// Load a font and set the text variable.
+def load() {
+  lastkey = "nothing"
+}
+
+// Output the last mouse button which was pressed/released.
+def draw() {
+  love.graphics.print("Last key: " + to_string(lastkey), 100, 100)
+}

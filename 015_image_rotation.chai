@@ -1,0 +1,19 @@
+// Example: Rotating images
+global x
+global y
+global angle = 0
+global image
+
+def load() {
+  image = love.graphics.newImage("assets/love-ball.png")
+}
+
+def update(dt) {
+  angle = (angle + dt) % (2 * love.math.pi)
+  x = 400 + cos(angle) * 100
+  y = 300 + sin(angle) * 100
+}
+
+def draw() {
+  love.graphics.draw(image, x, y, angle)
+}

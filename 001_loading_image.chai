@@ -1,0 +1,16 @@
+// Example: Loading an Image and displaying it
+/*
+Description:
+Load an image using love.graphics.newImage(image_path)
+Draw it using love.graphics.draw
+*/
+
+global image
+
+def load() {
+  image = love.graphics.newImage("assets/love-ball.png")
+}
+
+def draw() {
+  love.graphics.draw(image, 400, 300)
+}
