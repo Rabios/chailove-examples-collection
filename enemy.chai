@@ -1,0 +1,40 @@
+// https://sheepolution.com/learn/book/14
+class Enemy {
+  var image
+  var x
+  var y
+  var speed
+  var width
+  
+  def Enemy() {
+    this.image = love.graphics.newImage("assets/snake.png")
+    this.x = 325
+    this.y = 450
+    this.speed = 100
+    this.width = this.image.getWidth()
+  }
+  
+  def update(dt) {
+    this.x += this.speed * dt
+	
+	// Get the width of the window
+    var window_width = love.graphics.getWidth()
+	
+	// If the left side is too far too the left then..
+    if (this.x < 0) {
+      // Set x to 0
+      this.x = 0
+	  this.speed = -this.speed
+
+    // Else, if the right side is too far to the right then..
+    } else if (this.x + this.width > window_width) {
+      // Set the right side to the window's width.
+      this.x = window_width - this.width
+	  this.speed = -this.speed
+    }
+  }
+  
+  def draw() {
+    love.graphics.draw(this.image, this.x, this.y)
+  }
+}

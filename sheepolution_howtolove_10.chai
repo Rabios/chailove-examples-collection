@@ -1,0 +1,6 @@
+// https://sheepolution.com/learn/book/9
+global test
+test = 10
+love.filesystem.load("somefunction.chai")
+print(test)
+// Output: 10

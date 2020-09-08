@@ -1,0 +1,62 @@
+// https://sheepolution.com/learn/book/13
+global r1
+global r2
+global mode
+
+def checkCollision(a, b) {
+  // With locals it's common usage to use underscores instead of camelCasing
+  var a_left = a.x
+  var a_right = a.x + a.width
+  var a_top = a.y
+  var a_bottom = a.y + a.height
+
+  var b_left = b.x
+  var b_right = b.x + b.width
+  var b_top = b.y
+  var b_bottom = b.y + b.height
+
+  // If Red's right side is further to the right than Blue's left side.
+  // and Red's left side is further to the left than Blue's right side.
+  // and Red's bottom side is further to the bottom than Blue's top side.
+  // and Red's top side is further to the top than Blue's bottom side then..
+  // There is collision!
+  if ((a_right > b_left) && (a_left < b_right) && (a_bottom > b_top) && (a_top < b_bottom)) {
+    return true
+  } else {
+    // If one of these statements is false, return false.
+    return false
+  }
+}
+
+def load() {
+  // Create 2 rectangles
+  r1 = Dynamic_Object()
+  r1.x = 10
+  r1.y = 100
+  r1.width = 100
+  r1.height = 100
+
+  r2 = Dynamic_Object()
+  r2.x = 250
+  r2.y = 120
+  r2.width = 150
+  r2.height = 120
+}
+
+def update(dt) {
+  // Make one of rectangle move
+  r1.x += 100 * dt
+}
+
+def draw() {
+  if (checkCollision(r1, r2)) {
+    // If there is collision, draw the rectangles filled
+    mode = "fill"
+  } else {
+    // else, draw the rectangles as a line
+    mode = "line"
+  }
+
+  love.graphics.rectangle(mode, r1.x, r1.y, r1.width, r1.height)
+  love.graphics.rectangle(mode, r2.x, r2.y, r2.width, r2.height)
+}

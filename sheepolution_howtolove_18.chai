@@ -1,0 +1,24 @@
+// https://sheepolution.com/learn/book/17
+global frames
+global currentFrame
+
+def load() {
+  frames = List()
+  for (var i = 1; i < 5; ++i) {
+    frames.push_back(love.graphics.newImage("assets/jump" + to_string(i) + ".png"))
+  }
+  
+  // I use a long name to avoid confusion with the variable named frames
+  currentFrame = 0
+}
+
+draw() {
+  love.graphics.draw(frames[floor(currentFrame)])
+}
+
+def update(dt) {
+  currentFrame += 10 * dt
+  if (currentFrame >= 4) {
+    currentFrame = 0
+  }
+}

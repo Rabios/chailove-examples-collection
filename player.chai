@@ -1,0 +1,50 @@
+// https://sheepolution.com/learn/book/14
+class Player {
+  var image
+  var x
+  var y
+  var speed
+  var width
+  
+  def Player() {
+    this.image = love.graphics.newImage("assets/panda.png")
+    this.x = 300
+    this.y = 20
+    this.speed = 500
+    this.width = this.image.getWidth()
+  }
+  
+  def update(dt) {
+    if (love.keyboard.isDown("left")) {
+      this.x -= this.speed * dt
+    } else if (love.keyboard.isDown("right")) {
+      this.x += this.speed * dt
+    }
+	
+	// Get the width of the window
+    var window_width = love.graphics.getWidth()
+	
+	// If the left side is too far too the left then..
+    if (this.x < 0) {
+      // Set x to 0
+      this.x = 0
+
+    // Else, if the right side is too far to the right then..
+    } else if (this.x + this.width > window_width) {
+      // Set the right side to the window's width.
+      this.x = window_width - this.width
+    }
+  }
+  
+  def draw() {
+    love.graphics.draw(this.image, this.x, this.y)
+  }
+  
+  def keyPressed(key) {
+    //If the spacebar is pressed
+    if (key == "space") {
+      // Put a new instance of Bullet inside listOfBullets.
+      listOfBullets.erase_at(listOfBullets.size() - 1)
+    }
+  }
+}

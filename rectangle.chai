@@ -1,0 +1,24 @@
+// https://sheepolution.com/learn/book/11
+class Rectangle {
+  var x
+  var y
+  var width
+  var height
+  var speed
+  
+  def Rectangle(x, y, width, height) {
+    this.x = x
+	this.y = y
+	this.width = width
+	this.height = height
+	this.speed = 100
+  }
+  
+  def update(dt) {
+    this.x += this.speed * dt
+  }
+  
+  def draw() {
+    love.graphics.rectangle("line", this.x, this.y, this.width, this.height)
+  }
+}

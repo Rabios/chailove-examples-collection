@@ -1,0 +1,59 @@
+// https://sheepolution.com/learn/book/14
+Class Bullet {
+  var x
+  var y
+  var image
+  var speed
+  var width
+  var height
+  var dead
+  
+  // We pass the x and y of the player.
+  def Bullet(x, y) {
+    this.image = love.graphics.newImage("assets/bullet.png")
+    this.x = x
+    this.y = y
+    this.speed = 700
+	this.dead = false
+    // We'll need these for collision checking
+    this.width = self.image.getWidth()
+    this.height = self.image.getHeight()
+  }
+  
+  def update(dt) {
+    this.y += this.speed * dt
+	
+	// If the bullet is out of the screen
+    if (this.y > love.graphics.getHeight()) {
+      // Restart the game
+      love.load()
+    }
+  }
+  
+  def draw() {
+    love.graphics.draw(this.image, this.x, this.y)
+  }
+  
+  def checkCollision(obj) {
+    var self_left = this.x
+    var self_right = this.x + this.width
+    var self_top = this.y
+    var self_bottom = this.y + this.height
+
+    var obj_left = obj.x
+    var obj_right = obj.x + obj.width
+    var obj_top = obj.y
+    var obj_bottom = obj.y + obj.height
+
+    if ((self_right > obj_left) && (self_left < obj_right) && (self_bottom > obj_top) && (self_top < obj_bottom)) {
+      this.dead = true
+
+      // Increase enemy speed
+      if (obj.speed > 0) {
+        obj.speed += 50
+      } else {
+        obj.speed -= 50
+      }
+    }
+  }
+}

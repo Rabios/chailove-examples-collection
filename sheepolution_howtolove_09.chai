@@ -1,0 +1,36 @@
+// https://sheepolution.com/learn/book/8
+global listOfRectangles
+
+def load() {
+  // Remember: camelCasing!
+  listOfRectangles = []
+}
+
+def createRect() {
+  // Put the new rectangle in the list
+  listOfRectangles.push_back(Dynamic_Object())
+  listOfRectangles[listOfRectangles.size()].x = 100
+  listOfRectangles[listOfRectangles.size()].y = 100
+  listOfRectangles[listOfRectangles.size()].width = 70
+  listOfRectangles[listOfRectangles.size()].height = 90
+  listOfRectangles[listOfRectangles.size()].speed = 100
+}
+
+def update(dt) {
+  for (var i = 0; i < listOfRectangles.size(); ++i) {
+    listOfRectangles[i].x += listOfRectangles[i].speed * dt
+  }
+}
+
+def draw() {
+  for (var i = 0; i < listOfRectangles.size(); ++i) {
+    love.graphics.rectangle("line", listOfRectangles[i].x, listOfRectangles[i].y, listOfRectangles[i].width, listOfRectangles[i].height)
+  }
+}
+
+def keypressed(key) {
+  // Remember, 2 equal signs (==) for comparing!
+  if (key == "space") {
+    createRect()
+  }
+}

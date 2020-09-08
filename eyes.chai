@@ -1,0 +1,26 @@
+// https://simplegametutorials.github.io/eyes
+global distanceX
+global distanceY
+global distance
+global angle
+global pupilX
+global pupilY
+
+def drawEye(eyeX, eyeY) {
+  distanceX = love.mouse.getX() - eyeX
+  distanceY = love.mouse.getY() - eyeY
+  distance = min(sqrt(distanceX * distanceX + distanceY * distanceY), 30)
+  angle = atan2(distanceY, distanceX)
+  pupilX = eyeX + (cos(angle) * distance)
+  pupilY = eyeY + (sin(angle) * distance)
+
+  love.graphics.setColor(1, 1, 1)
+  love.graphics.circle("fill", eyeX, eyeY, 50)
+  love.graphics.setColor(0, 0, 0.4f)
+  love.graphics.circle("fill", pupilX, pupilY, 15)
+}
+
+def draw() {
+  drawEye(200, 200)
+  drawEye(330, 200)
+}

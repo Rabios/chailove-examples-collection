@@ -1,0 +1,14 @@
+// https://sheepolution.com/learn/book/12
+global myImage
+global width
+global height
+
+def load() {
+  myImage = love.graphics.newImage("assets/sheep.png")
+  width = myImage.getWidth()
+  height = myImage.getHeight()
+}
+
+def draw() {
+  love.graphics.draw(myImage, 100, 100, 0, 2, 2, width / 2, height / 2)
+}

@@ -1,0 +1,23 @@
+// https://sheepolution.com/learn/book/11
+class Circle {
+  var x
+  var y
+  var radius
+  var speed
+  
+  def Circle(x, y, radius) {
+    // A circle doesn't have a width or height. It has a radius.
+	this.x = x
+	this.y = y
+    this.radius = radius
+	this.speed = 100
+  }
+  
+  def update(dt) {
+    this.x += this.speed * dt
+  }
+  
+  def draw() {
+    love.graphics.circle("line", this.x, this.y, this.radius)
+  }
+}

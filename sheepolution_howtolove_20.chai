@@ -1,0 +1,38 @@
+// https://sheepolution.com/learn/book/18
+global tilemap
+global colors
+
+def load() {
+  tilemap = [
+    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+    [ 0, 1, 1, 1, 1, 1, 1, 1, 1, 0 ],
+    [ 0, 1, 2, 3, 4, 4, 3, 2, 1, 0 ],
+    [ 0, 1, 1, 1, 1, 1, 1, 1, 1, 0 ],
+    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+  ]
+
+  // Create a table named colors
+  colors = [
+    // Fill it with tables filled with RGB numbers
+    [ 255, 255, 255 ],
+    [ 255, 0, 0 ],
+    [ 255, 0, 255 ],
+    [ 0, 0, 255 ],
+    [ 0, 255, 255 ]
+  ]
+}
+
+def draw() {
+  for (var i = 0; i < tilemap.size(); ++i) {
+    for (var j = 0; j < tilemap[i].size(); ++j) {
+      if (!(tilemap[i][j] == tilemap.size())) {
+        // Set the color. .setColor() also accepts a table with 3 numbers.
+        // We pass the table with as position the value of tile.
+        // So if tile equals 3 then we pass colors[3] which is [ 1, 0, 1 ]
+        love.graphics.setColor(colors[tilemap[i][j]][0], colors[tilemap[i][j]][1], colors[tilemap[i][j]][2])
+        // Draw the tile
+        love.graphics.rectangle("fill", j * 25, i * 25, 25, 25)
+      }
+    }
+  }
+}

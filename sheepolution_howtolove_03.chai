@@ -1,0 +1,16 @@
+// https://sheepolution.com/learn/book/6
+global x
+
+def load() {
+  x = 100
+}
+
+def draw() {
+  love.graphics.rectangle("line", x, 50, 200, 150)
+}
+
+def update(dt) {
+  if (x < 600) {
+    x += 100 * dt
+  }
+}

@@ -1,0 +1,14 @@
+// https://sheepolution.com/learn/book/7
+global fruits
+
+def load() {
+  // Each value is separated by a comma, just like with parameters and arguments
+  fruits = [ "apple", "banana" ]
+  fruits.push_back("pear")
+}
+
+def draw() {
+  for (var i = 0; i < fruits.size(); ++i) {
+    love.graphics.print(fruits[i], 100, 100 + 50 * i)
+  }
+}

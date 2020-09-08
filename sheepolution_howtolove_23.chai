@@ -1,0 +1,18 @@
+// https://sheepolution.com/learn/book/19
+global song
+global sfx
+
+def load() {
+  song = love.audio.newSource("assets/song.ogg", "stream")
+  song.setLooping(true)
+  song.play()
+
+  // sfx is short for 'sound effect', or at least I use it like that.
+  sfx = love.audio.newSource("assets/sfx.ogg", "static")
+}
+
+def keypressed(key) {
+  if (key == "space") {
+    sfx.play()
+  }
+}

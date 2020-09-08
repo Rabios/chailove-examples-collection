@@ -1,0 +1,18 @@
+// https://sheepolution.com/learn/book/11
+def load() {
+  // Don't forget to load the file
+  love.filesystem.load("rectangle.chai")
+
+  var r1 = Rectangle(100, 100, 200, 50)
+  var r2 = Rectangle(350, 80, 25, 140)
+}
+
+def update(dt) {
+  r1.update(dt)
+  r2.update(dt)
+}
+
+def draw() {
+  r1.draw()
+  r2.draw()
+}

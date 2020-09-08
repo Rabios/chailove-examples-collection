@@ -1,0 +1,17 @@
+// https://sheepolution.com/learn/book/9
+test = 20
+
+def some_function(test) {
+  if (true) {
+    test = 40
+    print(test)
+    // Output: 40
+  }
+  print(test)
+  // Output: 30
+}
+
+some_function(30)
+
+print(test)
+// Output: 20

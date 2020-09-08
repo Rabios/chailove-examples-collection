@@ -1,0 +1,4 @@
+// https://sheepolution.com/learn/book/4
+def draw() {
+  love.graphics.rectangle("fill", 100, 200, 50, 80)
+}

@@ -1,0 +1,17 @@
+// https://sheepolution.com/learn/book/12
+global myImage
+
+def load() {
+  myImage = love.graphics.newImage("assets/sheep.png")
+  love.graphics.setBackgroundColor(1, 1, 1)
+}
+
+def draw() {
+  love.graphics.setColor(255 / 255, 200 / 255, 40 / 255, 127 / 255)
+  love.graphics.setColor(1, 0.78f, 0.15f, 0.5f)
+  // Or ...
+  love.graphics.draw(myImage, 100, 100)
+  // Not passing an argument for alpha automatically sets it to 1 again.
+  love.graphics.setColor(1, 1, 1)
+  love.graphics.draw(myImage, 200, 100)
+}
