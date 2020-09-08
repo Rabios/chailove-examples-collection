@@ -1,0 +1,28 @@
+// Example: Line Iterators
+// Updated 0.8.0 by Bartoleo
+
+global lines
+
+def load() {
+  
+  // Set the font.
+  love.graphics.setFont(love.graphics.newFont("assets/Vera.ttf", 8))
+
+  // Store the lines in this table.
+  lines = []
+
+  // Open the file main.lua and loop through the first
+  // 50 lines.
+  for (var i = 0; i < love.filesystem.lines("main.lua").size(); ++i) {
+    if (!(i >= 50)) {
+	  lines.push_back(love.filesystem.lines("main.lua")[i])
+	}
+  }
+}
+
+def draw() {
+  // Draw the loaded lines.
+  for (var i = 0; i < lines.size(); ++i) {
+    love.graphics.print("Line " + to_string(i) + ": " + to_string(lines[i]), 50, 50 + (i * 10))
+  }
+}

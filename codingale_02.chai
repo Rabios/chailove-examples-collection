@@ -1,0 +1,14 @@
+// Example: Getting the mouse position
+
+def load() {
+  var f = love.graphics.newFont("assets/Vera.ttf", 14)
+  love.graphics.setFont(f)
+}
+
+def draw() {
+  // Gets the x- and y-position of the mouse.
+  var x = love.mouse.getX()
+  var y = love.mouse.getY()
+  // Draws the position on screen.
+  love.graphics.print("The mouse is at (" + to_string(x) + "," + to_string(y) + ")", 50, 50)
+}

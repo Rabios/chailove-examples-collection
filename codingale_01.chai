@@ -1,0 +1,10 @@
+// Example: Loading an Image and displaying it
+global image
+
+def load() {
+  image = love.graphics.newImage("assets/love-ball.png")
+}
+
+def draw() {
+  love.graphics.draw(image, 400, 300)
+}

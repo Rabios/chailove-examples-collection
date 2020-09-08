@@ -1,0 +1,15 @@
+// Example: Basic callbacks
+
+global elapsed = 0
+
+// Update: Called each frame. Update the
+// state of your game here.
+def update(dt) {
+  elapsed += dt
+}
+
+// Draw: Called each frame. The game
+// should be drawn in this functions.
+def draw() {
+  love.graphics.print("Elapsed time: " + to_string(elapsed), 100, 100)
+}

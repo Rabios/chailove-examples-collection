@@ -1,0 +1,55 @@
+// Example: Mouse callbacks
+
+global last
+
+// Mousepressed: Called whenever a mouse button was pressed,
+// passing the button and the x and y coordiante it was pressed at.
+def mousepressed(x, y, button) {
+  // Checks which button was pressed.
+  if (button == "l") {
+	last = "left pressed"
+  } else if (button == "r") {
+	last = "right pressed"
+  } else if (button == "m") {
+	last = "middle pressed"
+  } else if (button == "wu") {
+    // Won't show up because scrollwheels are instantly "released",
+	// but the event is legitimate.
+	last = "scrollwheel up pressed"
+  } else if (button == "wd") {
+	// Won't show up because scrollwheels are instantly "released",
+	// but the event is legitimate.
+	last = "scrollwheel down pressed"
+  }
+	
+  last = to_string(last) + " @ (" + to_string(x) + "x" + to_string(y) + ")"
+}
+
+// Mousereleased: Called whenever a mouse button was released,
+// passing the button and the x and y coordiante it was released at.
+def mousereleased(x, y, button) {
+  // Checks which button was released.
+  if (button == "l") {
+	last = "left released"
+  } else if (button == "r") {
+	last = "right released"
+  } else if (button == "m") {
+	last = "middle released"
+  } else if (button == "wu") {
+    last = "scrollwheel up released"
+  } else if (button == "wd") {
+	last = "scrollwheel down released"
+  }
+	
+  last = to_string(last) + " @ (" + to_string(x) + "x" + to_string(y) + ")"
+}
+
+// Load a font 
+def load() {
+  last = "nothing"
+}
+
+// Output the last mouse button which was pressed/released.
+def draw() {
+  love.graphics.print("Last mouse click: " + to_string(last), 100, 100)
+}

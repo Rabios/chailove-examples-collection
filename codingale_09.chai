@@ -1,0 +1,22 @@
+// Example: Timing code
+
+global t_start
+global t_end
+
+def load() {
+  // Get time before the code to be timed.
+  t_start = love.timer.getTime()
+    
+  // Load 10 fonts.
+  for (var i = 12; i < 22; ++i) {
+    var f = love.graphics.newFont("Vera.ttf", i)
+    love.graphics.setFont(f)
+  }
+    
+  // Get time after.
+  t_end = love.timer.getTime()
+}
+
+function love.draw()
+    love.graphics.print("Spent " .. (t_end-t_start) .. " seconds loading 10 fonts.", 50, 50)
+end

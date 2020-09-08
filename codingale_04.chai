@@ -1,0 +1,9 @@
+// Example: Setting the mouse position
+
+// Press a key to move the mouse to
+// some random point.
+def keypressed(k) {
+  var x = love.math.random(0,800)
+  var y = love.math.random(0,600)
+  love.mouse.setPosition(x, y)
+}

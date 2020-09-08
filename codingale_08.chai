@@ -1,0 +1,9 @@
+// Example: FPS and delta-time
+
+def draw() {
+  // Draw the current FPS.
+  love.graphics.print("FPS: " + to_string(love.timer.getFPS()), 50, 50)
+  // Draw the current delta-time. (The same value
+  // is passed to update each frame).
+  love.graphics.print("dt: " + to_string(love.timer.getDelta()), 50, 100)
+}

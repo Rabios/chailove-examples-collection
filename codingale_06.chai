@@ -1,0 +1,24 @@
+// Example: Cursor Visibility
+
+def load() {
+  // Hide mouse on startup.
+  love.mouse.setVisible(false)
+    
+  var f = love.graphics.newFont("assets/Vera.ttf", 12)
+  love.graphics.setFont(f)
+}
+
+// Toggle cursor visibility.
+def keypressed(k) {
+  if (k == "v") {
+	if (love.mouse.isVisible()) {
+	  love.mouse.setVisible(false)
+	} else {
+	  love.mouse.setVisible(true)
+	}
+  }
+}
+
+def draw() {
+  love.graphics.print("Press V to toggle visibility.", 50, 50)
+}
