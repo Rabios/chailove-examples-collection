@@ -1,30 +1,14 @@
 // https://sheepolution.com/learn/book/14
+require("player")
+require("enemy")
+require("bullet")
 global player
 global enemy
-global listOfBullets = List()
-love.filesystem.load("player.chai")
-love.filesystem.load("enemy.chai")
-love.filesystem.load("bullet.chai")
+global listOfBullets = []
 
 def load() {
   player = Player()
   enemy = Enemy()
-}
-
-def update(dt) {
-  player.update(dt)
-  enemy.update(dt)
-  
-  for (var i = 0; i < listOfBullets.size(); ++i) {
-    listOfBullets[i].update()
-	listOfBullets[i].checkCollision(enemy)
-	
-	// If the bullet has the property dead and it's true then..
-    if (listOfBullets[i].dead) {
-      // Remove it from the list
-      listOfBullets.(listOfBullets, i)
-    }
-  }
 }
 
 def draw() {
@@ -36,6 +20,22 @@ def draw() {
   }
 }
 
-def keypressed(key) {
-  player.keyPressed(key)
+def update(dt) {
+  player.update(dt)
+  enemy.update(dt)
+  
+  for (var i = 0; i < listOfBullets.size(); ++i) {
+    listOfBullets[i].update(dt)
+	listOfBullets[i].checkCollision(enemy)
+	
+	// If the bullet has the property dead and it's true then..
+    if (listOfBullets[i].dead) {
+      // Remove it from the list
+      listOfBullets.erase_at(i)
+    }
+  }
+}
+
+def keypressed(key, scancode) {
+  player.keypressed(key)
 }

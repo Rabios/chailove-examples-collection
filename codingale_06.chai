@@ -1,3 +1,4 @@
+// https://github.com/Codingale/LOVE/blob/master/0.9.0%20examples/src/e0006.lua
 // Example: Cursor Visibility
 
 def load() {

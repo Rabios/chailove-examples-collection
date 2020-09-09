@@ -3,7 +3,6 @@ class Circle {
   var x
   var y
   var radius
-  var speed
   
   def Circle(x, y, radius) {
     // A circle doesn't have a width or height. It has a radius.

@@ -1,6 +1,5 @@
 // https://sheepolution.com/learn/book/8
 global listOfRectangles
-love.filesystem.load("rectangle.chai")
 
 def load() {
   // Remember: camelCasing!
@@ -9,32 +8,27 @@ def load() {
 
 def createRect() {
   // Put the new rectangle in the list
-  /*
   listOfRectangles.push_back(Dynamic_Object())
-  listOfRectangles[listOfRectangles.size()].x = 100
-  listOfRectangles[listOfRectangles.size()].y = 100
-  listOfRectangles[listOfRectangles.size()].width = 70
-  listOfRectangles[listOfRectangles.size()].height = 90
-  listOfRectangles[listOfRectangles.size()].speed = 100
-  */
-  listOfRectangles.push_back(Rectangle(100, 100, 70, 90))
+  listOfRectangles[listOfRectangles.size() - 1].x = 100
+  listOfRectangles[listOfRectangles.size() - 1].y = 100
+  listOfRectangles[listOfRectangles.size() - 1].width = 70
+  listOfRectangles[listOfRectangles.size() - 1].height = 90
+  listOfRectangles[listOfRectangles.size() - 1].speed = 100
 }
 
 def update(dt) {
   for (var i = 0; i < listOfRectangles.size(); ++i) {
-    //listOfRectangles[i].x += listOfRectangles[i].speed * dt
-    listOfRectangles[i].update()
+    listOfRectangles[i].x += listOfRectangles[i].speed * dt
   }
 }
 
 def draw() {
   for (var i = 0; i < listOfRectangles.size(); ++i) {
-    //love.graphics.rectangle("line", listOfRectangles[i].x, listOfRectangles[i].y, listOfRectangles[i].width, listOfRectangles[i].height)
-    listOfRectangles[i].draw()
+    love.graphics.rectangle("line", listOfRectangles[i].x, listOfRectangles[i].y, listOfRectangles[i].width, listOfRectangles[i].height)
   }
 }
 
-def keypressed(key) {
+def keypressed(key, scancode) {
   // Remember, 2 equal signs (==) for comparing!
   if (key == "space") {
     createRect()

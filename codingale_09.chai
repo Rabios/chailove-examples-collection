@@ -1,3 +1,4 @@
+// https://github.com/Codingale/LOVE/blob/master/0.9.0%20examples/src/e0009.lua
 // Example: Timing code
 
 global t_start
@@ -17,6 +18,6 @@ def load() {
   t_end = love.timer.getTime()
 }
 
-function love.draw()
-    love.graphics.print("Spent " .. (t_end-t_start) .. " seconds loading 10 fonts.", 50, 50)
-end
+def draw() {
+  love.graphics.print("Spent " + to_string(t_end - t_start) + " seconds loading 10 fonts.", 50, 50)
+}

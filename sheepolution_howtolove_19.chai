@@ -6,7 +6,7 @@ def load() {
 }
 
 def draw() {
-  for (var i = 0; i < tilemap.size() - 1; ++i) {
+  for (var i = 0; i < tilemap.size(); ++i) {
     if (tilemap[i] == 1) {
       love.graphics.rectangle("line", i * 25, 100, 25, 25)
     }

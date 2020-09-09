@@ -1,11 +1,14 @@
 // https://sheepolution.com/learn/book/11
-def load() {
-  // Don't forget to load the file
-  love.filesystem.load("rectangle.chai")
-  love.filesystem.load("circle.chai")
+
+// Don't forget to load the file
+require("rectangle")
+require("circle")
+global r1
+global r2
   
-  var r1 = Rectangle(100, 100, 200, 50)
-  var r2 = Circle(350, 80, 40)
+def load() {
+  r1 = Rectangle(100, 100, 200, 50)
+  r2 = Circle(350, 80, 40)
 }
 
 def update(dt) {

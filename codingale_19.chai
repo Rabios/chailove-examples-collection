@@ -1,10 +1,8 @@
-// https://github.com/Codingale/LOVE/blob/master/0.9.0%20examples/src/e0016.lua
-// Example: Rotation and scaling
+// https://github.com/Codingale/LOVE/blob/master/0.9.0%20examples/src/e0105.lua
+// Example: Filler
 
 global angle = 0
 global image
-global x
-global y
 
 def load() {
   image = love.graphics.newImage("assets/love-ball.png")

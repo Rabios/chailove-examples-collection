@@ -1,10 +1,5 @@
 // https://sheepolution.com/learn/book/14
 class Enemy {
-  var image
-  var x
-  var y
-  var speed
-  var width
   
   def Enemy() {
     this.image = love.graphics.newImage("assets/snake.png")

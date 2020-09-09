@@ -4,7 +4,6 @@ class Rectangle {
   var y
   var width
   var height
-  var speed
   
   def Rectangle(x, y, width, height) {
     this.x = x

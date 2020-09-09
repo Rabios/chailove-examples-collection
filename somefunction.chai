@@ -1,5 +1,5 @@
 // https://sheepolution.com/learn/book/9
-test = 20
+global test = 20
 
 def some_function(test) {
   if (true) {

@@ -1,12 +1,7 @@
 // https://sheepolution.com/learn/book/14
-Class Bullet {
+class Bullet {
   var x
   var y
-  var image
-  var speed
-  var width
-  var height
-  var dead
   
   // We pass the x and y of the player.
   def Bullet(x, y) {
@@ -16,8 +11,8 @@ Class Bullet {
     this.speed = 700
 	this.dead = false
     // We'll need these for collision checking
-    this.width = self.image.getWidth()
-    this.height = self.image.getHeight()
+    this.width = this.image.getWidth()
+    this.height = this.image.getHeight()
   }
   
   def update(dt) {
