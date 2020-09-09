@@ -4,7 +4,7 @@
   <img src="https://www.libretro.com/wp-content/uploads/2017/12/chaiscript.png" width="128" height="128"><img src="https://www.libretro.com/wp-content/uploads/2017/12/chailovelogo.png" width="128" height="128">
 </div>
 
-The awesome collection of [ChaiLove](https://www.libretro.com/index.php/chailove/) examples, For everyone!
+Awesome collection of [ChaiLove](https://www.libretro.com/index.php/chailove/) examples, For everyone!
 
 Some each example has link to it's original source, As examples are ports of their original source codes!
 
