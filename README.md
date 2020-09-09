@@ -6,10 +6,8 @@
 
 The awesome collection of [ChaiLove](https://www.libretro.com/index.php/chailove/) examples, For everyone!
 
-Some examples are direct port of [LOVE-Example-Browser](https://github.com/love2d-community/LOVE-Example-Browser) examples, And other varies (Each source have link!)
+Some each example has link to it's original source, As examples are ports of their original source codes!
 
 > NOTE 1: Some examples need ChaiScript extras, You can know more about them [here](https://github.com/ChaiScript/ChaiScript_extras)!
 
 > NOTE 2: Not sure if more examples will be added but soon if i had time for this :(
-
-> NOTE 3: If there is any problem in examples, Please make issue for this (Although i might not be available sometimes)
