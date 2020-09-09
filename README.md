@@ -1,7 +1,7 @@
 # chailove-examples-collection
 
 <div align="center">
-    <img src="https://www.libretro.com/wp-content/uploads/2017/12/love2dlogo.png" width="128" height="128"><img src="https://www.libretro.com/wp-content/uploads/2017/12/chaiscript.png" width="128" height="128"><img src="https://www.libretro.com/wp-content/uploads/2017/12/chailovelogo.png" width="128" height="128">
+  <img src="https://www.libretro.com/wp-content/uploads/2017/12/chaiscript.png" width="128" height="128"><img src="https://www.libretro.com/wp-content/uploads/2017/12/chailovelogo.png" width="128" height="128">
 </div>
 
 The awesome collection of [ChaiLove](https://www.libretro.com/index.php/chailove/) examples, For everyone!
