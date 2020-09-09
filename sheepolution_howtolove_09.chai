@@ -1,5 +1,6 @@
 // https://sheepolution.com/learn/book/8
 global listOfRectangles
+love.filesystem.load("rectangle.chai")
 
 def load() {
   // Remember: camelCasing!
@@ -8,23 +9,28 @@ def load() {
 
 def createRect() {
   // Put the new rectangle in the list
+  /*
   listOfRectangles.push_back(Dynamic_Object())
   listOfRectangles[listOfRectangles.size()].x = 100
   listOfRectangles[listOfRectangles.size()].y = 100
   listOfRectangles[listOfRectangles.size()].width = 70
   listOfRectangles[listOfRectangles.size()].height = 90
   listOfRectangles[listOfRectangles.size()].speed = 100
+  */
+  listOfRectangles.push_back(Rectangle(100, 100, 70, 90))
 }
 
 def update(dt) {
   for (var i = 0; i < listOfRectangles.size(); ++i) {
-    listOfRectangles[i].x += listOfRectangles[i].speed * dt
+    //listOfRectangles[i].x += listOfRectangles[i].speed * dt
+    listOfRectangles[i].update()
   }
 }
 
 def draw() {
   for (var i = 0; i < listOfRectangles.size(); ++i) {
-    love.graphics.rectangle("line", listOfRectangles[i].x, listOfRectangles[i].y, listOfRectangles[i].width, listOfRectangles[i].height)
+    //love.graphics.rectangle("line", listOfRectangles[i].x, listOfRectangles[i].y, listOfRectangles[i].width, listOfRectangles[i].height)
+    listOfRectangles[i].draw()
   }
 }
 

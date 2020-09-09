@@ -1,4 +1,4 @@
--- Example: Checking for pressed mouse buttons
+// Example: Checking for pressed mouse buttons
 
 def load() {
   var f = love.graphics.newFont("assets/Vera.ttf", 14)

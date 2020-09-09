@@ -1,0 +1,23 @@
+// Example: Rotation and scaling
+
+global angle = 0
+global image
+global x
+global y
+
+def load() {
+  image = love.graphics.newImage("assets/love-ball.png")
+}
+
+def update(dt) {
+  angle = angle + dt
+  x = 400 + cos(angle) * 100
+  y = 300 + sin(angle) * 100
+}
+
+def draw() {
+  var rot = angle * 180 / love.math.pi
+  var sx = cos(angle)*3
+  var sy = sin(angle)*2
+  love.graphics.draw(image, x, y, rot, sx, sy, 32, 32)
+}
