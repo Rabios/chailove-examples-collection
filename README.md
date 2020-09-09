@@ -4,7 +4,7 @@
     <img src="https://www.libretro.com/wp-content/uploads/2017/12/love2dlogo.png" width="128" height="128"><img src="https://www.libretro.com/wp-content/uploads/2017/12/chaiscript.png" width="128" height="128"><img src="https://www.libretro.com/wp-content/uploads/2017/12/chailovelogo.png" width="128" height="128">
 </div>
 
-The awesome collection of ChaiLove examples, For everyone!
+The awesome collection of [ChaiLove](https://www.libretro.com/index.php/chailove/) examples, For everyone!
 
 Some examples are direct port of [LOVE-Example-Browser](https://github.com/love2d-community/LOVE-Example-Browser) examples, And other varies (Each source have link!)
 
