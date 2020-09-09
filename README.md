@@ -8,6 +8,6 @@ The awesome collection of [ChaiLove](https://www.libretro.com/index.php/chailove
 
 Some each example has link to it's original source, As examples are ports of their original source codes!
 
-> NOTE 1: Some examples need ChaiScript extras, You can know more about them [here](https://github.com/ChaiScript/ChaiScript_extras)!
+> NOTE 1: Few examples need [ChaiScript extras](https://github.com/ChaiScript/ChaiScript_extras), That's for math functions!
 
 > NOTE 2: Not sure if more examples will be added but soon if i had time for this :(
