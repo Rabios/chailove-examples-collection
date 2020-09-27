@@ -6,7 +6,7 @@
 
 Awesome collection of [ChaiLove](https://www.libretro.com/index.php/chailove/) examples, For everyone!
 
-Some each example has link to it's original source, As examples are ports of their original source codes!
+Each example has link to it's original source, As examples are ports of their original source codes!
 
 > NOTE 1: Few examples need [ChaiScript extras](https://github.com/ChaiScript/ChaiScript_extras), That's for math functions!
 
