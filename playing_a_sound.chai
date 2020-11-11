@@ -1,6 +1,6 @@
 def load() {
-  var sound = love.audio.newSource("assets/HA-1112-M1LBuchon_flyby.ogg", "stream")
-  love.audio.play(sound)
+  var sound = love.sound.newSoundData("assets/HA-1112-M1LBuchon_flyby.ogg", "stream")
+  sound.play()
 }
 
 def draw() {}

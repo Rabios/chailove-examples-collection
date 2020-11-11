@@ -5,7 +5,6 @@
 global lines
 
 def load() {
-  
   // Set the font.
   love.graphics.setFont(love.graphics.newFont("assets/Vera.ttf", 8))
 

@@ -2,13 +2,15 @@
 global song
 global sfx
 
+def draw() {}
+
 def load() {
-  song = love.audio.newSource("assets/song.ogg", "stream")
+  song = love.audio.newSoundData("assets/song.ogg", "stream")
   song.setLooping(true)
   song.play()
 
   // sfx is short for 'sound effect', or at least I use it like that.
-  sfx = love.audio.newSource("assets/sfx.ogg", "static")
+  sfx = love.audio.newSoundData("assets/sfx.ogg", "static")
 }
 
 def keypressed(key) {

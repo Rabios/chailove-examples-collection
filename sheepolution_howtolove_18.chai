@@ -12,7 +12,7 @@ def load() {
   currentFrame = 0
 }
 
-draw() {
+def draw() {
   love.graphics.draw(frames[floor(currentFrame)])
 }
 
